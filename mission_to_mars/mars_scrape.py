@@ -8,14 +8,15 @@ def scrape():
     browser = Browser("chrome", **executable_path, headless=False)
     title,paragraph=news(browser)
 
-    return {
+    results = {
         'title': title,
         'paragraph':paragraph,
         'image':image(browser),
         'facts':facts(),
         'hemispheres':hemispheres(browser)
     }
-    
+    return results
+
 # ### NASA Mars News
 def news(browser):
     browser.visit('https://redplanetscience.com/')
