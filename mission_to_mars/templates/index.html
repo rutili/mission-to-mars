@@ -23,35 +23,37 @@
       </div>
     </div>
 
-
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
         <h2>Featured Mars Image</h2>
-        <img src="{{mars.image }}" alt="featured_image">
+        <img src="{mars.image}}" alt="featured_image">
       </div>
+
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
         <br>
         <h3>Mars Fact</h3>
         {{mars.facts | safe }}
       </div>
-  </div>
+     </div>
 
     <h2 class="text-center">Mars Hemispheres</h2>
     <hr>
-        <div class="row">
-            {% for hemisphere in mars.hemisphere_image_urls %}
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 col-xl-3">
-              <div class="card border-primary" style="width: 18rem;">
-              <img class="card-img-top" src="{{mars.hemispheres  }}" alt="{{ hemisphere.title }}" height=200>
-              <div class="card-body">
-                <h5 class="card-title">{{ hemisphere.title }}</h5>
-              </div>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
+    <div class="row">
+      {% for hemisphere in mars.hemispheres %}
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+        <div class="card border-primary" style="width: 18rem;">
+        <img class="card-body-img" src="{{hemisphere.url}}" alt="{{ hemisphere.title }}" height=200>
+        <div class="card-body">
+          <h5 class="card-title">{{ hemisphere.title }}</h5>
+        </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
   </div>
 </body>
 
 </html>
+
+href="/scrape" 
